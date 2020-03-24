@@ -1,5 +1,6 @@
 # codeacademy
 
+# world population SQL merge tables project
 
 SELECT COUNT(*) FROM  countries
 GROUP BY  continent
