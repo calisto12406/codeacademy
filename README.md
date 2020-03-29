@@ -1,46 +1,26 @@
 # codeacademy
 
-# world population SQL merge tables project
+# len's slice python slicing
 
-SELECT COUNT(*) FROM  countries
-GROUP BY  continent
-HAVING continent = 'Africa';
+toppings = ['pepperoni', 'pineapple', 'cheese', 'sausage', 'olives', 'anchovies', 'mushrooms']
 
-SELECT SUM(population) FROM countries
-JOIN population_years
-	ON  countries.id = population_years.country_id
-WHERE continent = 'Oceania'
-AND year = '2005';
+prices = [2, 6, 1, 3, 2, 7, 2]
 
-SELECT AVG(population) FROM countries
-JOIN population_years
-	ON  countries.id = population_years.country_id
-WHERE continent = 'South America'
-AND year =  '2003';
+num_pizzas = len(toppings)
 
-SELECT name, population FROM countries
-JOIN population_years
-	ON  countries.id = population_years.country_id
-WHERE year = '2007'
-AND population IS NOT NULL
-ORDER BY population ASC
-LIMIT 1;
+print('We sell ' + str(num_pizzas) + ' different kinds of pizzas')
 
-SELECT AVG(population) FROM countries
-JOIN population_years
-	ON  countries.id = population_years.country_id
-WHERE name = 'Poland';
+pizzas = list(zip(prices, toppings))
+pizzas.sort()
 
-SELECT COUNT(*) FROM countries
-WHERE name LIKE '%The%';
+print(pizzas)
 
-SELECT continent, SUM(population_years.population) FROM countries
-JOIN population_years
-	ON  countries.id = population_years.country_id
-GROUP BY continent;
+cheapest_pizza = pizzas[0]
 
+priciest_pizza = pizzas[-1]
 
+three_cheapest = pizzas[0:3]
+print(three_cheapest)
 
-
-
-
+num_two_dollar_slices = prices.count(2)
+print(num_two_dollar_slices)
